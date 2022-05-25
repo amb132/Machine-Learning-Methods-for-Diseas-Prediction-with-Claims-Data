@@ -1,0 +1,248 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<title>EMR</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata">
+<style>
+body, html {
+  height: 100%;
+  font-family: "Inconsolata", sans-serif;
+
+}
+
+.bgimg {
+  background-position: center;
+  background-size: cover;
+ background: url({% static 'doctormodule/1.jpg' %})  50% 50%;   background-size:cover;
+  min-height: 75%;
+}
+
+.menu {
+  display: none;
+}
+</style>
+<body>
+
+<!-- Links (sit on top) -->
+<div class="w3-top">
+  <div class="w3-row w3-padding w3-black">
+    <div class="w3-col s3">
+      <a href="#" class="w3-button w3-block w3-black">HOME</a>
+    </div>
+    <div class="w3-col s3">
+      <a href="#about" class="w3-button w3-block w3-black">ABOUT</a>
+    </div>
+    <div class="w3-col s3">
+      <a href="home" class="w3-button w3-block w3-black">Go back</a>
+    </div>
+    <div class="w3-col s3">
+      <a href="logout" class="w3-button w3-block w3-black">Logout </a>
+    </div>
+  </div>
+</div>
+
+<!-- Header with image -->
+<header class="bgimg w3-display-container w3-grayscale-min" id="home">
+  <div class="w3-display-bottomleft w3-center w3-padding-large w3-hide-small">
+    <span class="w3-tag"></span>
+  </div>
+  <div class="w3-display-middle w3-center">
+    <span class="w3-text-white" style="font-size:45px">Machine learning methods for disease prediction with claims data <br>
+</span>
+  </div>
+  <div class="w3-display-bottomright w3-center w3-padding-large">
+    <span class="w3-text-white"></span>
+  </div>
+</header>
+
+<!-- Add a background color and large text to the whole page -->
+<div class="w3-sand w3-grayscale w3-large">
+
+<!-- About Container -->
+
+</div>
+
+<!-- Menu Container -->
+<div class="w3-container" id="menu">
+  <div class="w3-content" style="max-width:1000px">
+
+    <h5 class="w3-center w3-padding-48"><span class="w3-tag w3-wide">Module Contains</span></h5>
+
+    <div class="w3-row w3-center w3-card w3-padding">
+      <a href="javascript:void(0)" onclick="openMenu(event, 'Eat');" id="myLink">
+        <div class="w3-col s6 tablink">Prediction For</div>
+      </a>
+
+
+    <div id="Eat" class="w3-container menu w3-padding-48 w3-card">
+      <h5>COPD</h5>
+      <p class="w3-text-grey"></p><br>
+
+      <h5>Diabetes</h5>
+      <p class="w3-text-grey"></p><br>
+
+
+      <h5>Heart </h5>
+      <p class="w3-text-grey"></p><br>
+
+
+</div>
+
+<!-- Contact/Area Container -->
+<div class="w3-container" id="where" style="padding-bottom:32px;">
+  <div class="w3-content" style="max-width:700px">
+    <h5 class="w3-center w3-padding-48"><span class="w3-tag w3-wide"></span></h5>
+    <p></p>
+
+    <p><span class="w3-tag">Update Form!</span>
+<form action="{% url 'accountUpdate' %}" method="POST">
+				{% csrf_token %}
+
+		<div id="main">
+			<div class="zf-templateWidth"><form action='https://forms.zohopublic.in/abhinav8769abhi/form/UPDATEACCOUNTDETAILS/formperma/QkD7NvpDevnEhopjFpuV99o1HP3zfv62SMO_LilKBSw/htmlRecords/submit' name='form' method='POST' onSubmit='javascript:document.charset="UTF-8"; return zf_ValidateAndSubmit();' accept-charset='UTF-8' enctype='multipart/form-data' id='form'><input type="hidden" name="zf_referrer_name" value=""><!-- To Track referrals , place the referrer name within the " " in the above hidden input field -->
+					<input type="hidden" name="zf_redirect_url" value=""><!-- To redirect to a specific page after record submission , place the respective url within the " " in the above hidden input field -->
+					<input type="hidden" name="zc_gad" value=""><!-- If GCLID is enabled in Zoho CRM Integration, click details of AdWords Ads will be pushed to Zoho CRM -->
+					<div class="zf-templateWrapper"><!---------template Header Starts Here---------->
+						<br><br><br><br>
+						<ul class="zf-tempHeadBdr"><li class="zf-tempHeadContBdr"><h2 class="zf-frmTitle"><em>UPDATE ACCOUNT DETAILS</em><br>
+						<em>{{ message }}</em>
+						</h2>
+								<p class="zf-frmDesc">Please update your details here.</p>
+								<div class="zf-clearBoth"></div></li></ul><!---------template Header Ends Here---------->
+						<!---------template Container Starts Here---------->
+						<div class="zf-subContWrap zf-topAlign"><ul>
+								<!---------Single Line Starts Here---------->
+								<li class="zf-tempFrmWrapper zf-small"><label class="zf-labelName">Employee ID
+										<em class="zf-important">*</em>
+									</label>
+									<div class="zf-tempContDiv"><span>
+											<input type="text" name="SingleLine" checktype="c1" value="{{ empID }}" maxlength="255" invlovedinsalesiq=false readonly/></span><p id="SingleLine_error" class="zf-errorMessage" style="display:none;">Invalid value</p>
+									</div><div class="zf-clearBoth"></div></li><!---------Single Line Ends Here---------->
+									<!---------Single Line Starts Here---------->
+									<li class="zf-tempFrmWrapper zf-medium"><label class="zf-labelName">Full Name
+											<em class="zf-important">*</em>
+										</label>
+										<div class="zf-tempContDiv"><span>
+												<input type="text" name="SingleLine1" checktype="c1" value="{{ name }}" maxlength="255" invlovedinsalesiq=false readonly/></input> </span><p id="SingleLine1_error" class="zf-errorMessage" style="display:none;">Invalid value</p>
+										</div><div class="zf-clearBoth"></div></li><!---------Single Line Ends Here---------->
+										<!---------Single Line Starts Here---------->
+										<li class="zf-tempFrmWrapper zf-medium"><label class="zf-labelName">Department Name
+											</label>
+											<div class="zf-tempContDiv"><span>
+													<input type="text" name="dept" checktype="c1" value="{{ dept }}" maxlength="255" invlovedinsalesiq=false/></span><p id="SingleLine2_error" class="zf-errorMessage" style="display:none;">Invalid value</p>
+											</div><div class="zf-clearBoth"></div></li><!---------Single Line Ends Here---------->
+											<!---------Number Starts Here---------->
+											<li class="zf-tempFrmWrapper zf-small"><label class="zf-labelName">Contact
+												</label>
+												<div class="zf-tempContDiv"><span> <input type="text" name="contact" checktype="c2" value="{{ contact }}" maxlength="18"/></span> <p id="Number_error" class="zf-errorMessage" style="display:none;">Invalid value</p>
+												</div><div class="zf-clearBoth"></div></li><!---------Number Ends Here---------->
+												<!---------Radio Starts Here---------->
+												<li class="zf-radio zf-tempFrmWrapper zf-oneColumns"><label class="zf-labelName">Gender
+														<em class="zf-important">*</em>
+													</label>
+													<div class="zf-tempContDiv"><span>
+															<input type="text" checktype="c1" value="{{ gender }}" maxlength="255" invlovedinsalesiq=false readonly/></span><p id="SingleLine2_error" class="zf-errorMessage" style="display:none;">Invalid value</p>
+													</div><div class="zf-clearBoth"></div></li><!---------Single Line Ends Here---------->
+													<!---------Dropdown Starts Here---------->
+													<li class="zf-tempFrmWrapper zf-large"><label class="zf-labelName">Security Question 1
+														</label>
+														<label class="zf-labelName">{{ ans1ID }}</label>
+														<div class="zf-tempContDiv"><select class="zf-form-sBox" name="ans1ID" checktype="c1">
+																<option value=1>What was your childhood nickname?</option>
+																<option value=2>In what city did you meet your spouse/significant other?</option>
+																<option value=3>What is the name of your favorite childhood friend?</option>
+																<option value=4>What is your oldest sibling’s birthday month and year?</option>
+																<option value=5>What is the middle name of your oldest child?</option>
+															</select><p id="Dropdown_error" class="zf-errorMessage" style="display:none;">Invalid value</p>
+														</div><div class="zf-clearBoth"></div></li><!---------Dropdown Ends Here---------->
+														<!---------Single Line Starts Here---------->
+														<li class="zf-tempFrmWrapper zf-small"><label class="zf-labelName">Answer 1
+															</label>
+															<div class="zf-tempContDiv"><span>
+																	<input type="text" name="ans1" checktype="c1" value="{{ ans1 }}" maxlength="255" invlovedinsalesiq=false/></span><p id="SingleLine3_error" class="zf-errorMessage" style="display:none;">Invalid value</p>
+															</div><div class="zf-clearBoth"></div></li><!---------Single Line Ends Here---------->
+															<!---------Dropdown Starts Here---------->
+															<li class="zf-tempFrmWrapper zf-large"><label class="zf-labelName">Security Question 2
+																</label>
+																<label class="zf-labelName">{{ ans2ID }}</label>
+																<div class="zf-tempContDiv"><select class="zf-form-sBox" name="ans2ID" checktype="c1">
+																		<option value=1>What school did you attend for sixth grade?</option>
+																		<option value=2>What was the name of your first stuffed animal?</option>
+																		<option value=3>In what city does your nearest sibling live?</option>
+																		<option value=4>In what city or town was your first job?</option>
+																		<option value=5>Which is the first company you ever worked for?</option>
+																	</select><p id="Dropdown1_error" class="zf-errorMessage" style="display:none;">Invalid value</p>
+																</div><div class="zf-clearBoth"></div></li><!---------Dropdown Ends Here---------->
+																<!---------Single Line Starts Here---------->
+																<li class="zf-tempFrmWrapper zf-small"><label class="zf-labelName">Answer 2
+																	</label>
+																	<div class="zf-tempContDiv"><span>
+																			<input type="text" name="ans2" checktype="c1" value="{{ ans2 }}" maxlength="255" invlovedinsalesiq=false/> </span><p id="SingleLine4_error" class="zf-errorMessage" style="display:none;">Invalid value</p>
+																	</div><div class="zf-clearBoth"></div></li><!---------Single Line Ends Here---------->
+																	<!---------Single Line Starts Here---------->
+																	<li class="zf-tempFrmWrapper zf-medium"><label class="zf-labelName">Email
+																			<em class="zf-important">*</em>
+																		</label>
+																		<div class="zf-tempContDiv"><span>
+																				<input type="text" name="email" checktype="c1" value="{{ email }}" maxlength="255" invlovedinsalesiq=false/> </span><p id="SingleLine5_error" class="zf-errorMessage" style="display:none;">Invalid value</p>
+																		</div><div class="zf-clearBoth"></div></li><!---------Single Line Ends Here---------->
+																		<!---------Single Line Starts Here---------->
+																		<li class="zf-tempFrmWrapper zf-medium"><label class="zf-labelName">Old Password
+																				<em class="zf-important">*</em>
+																			</label>
+																			<div class="zf-tempContDiv"><span>
+																					<input type="password" name="oldpass" checktype="c1" value="" maxlength="255" invlovedinsalesiq=false size="45" /> </span><p id="SingleLine6_error" class="zf-errorMessage" style="display:none;">Invalid value</p>
+																			</div><div class="zf-clearBoth"></div></li><!---------Single Line Ends Here---------->
+																			<li class="zf-tempFrmWrapper zf-medium"><label class="zf-labelName">New Password
+																					<em class="zf-important">*</em>
+																				</label>
+																				<div class="zf-tempContDiv"><span>
+																						<input type="password" name="newpass" checktype="c1" value="" maxlength="255" invlovedinsalesiq=false  size="45" placeholder="At least 1 Upper Case, Lower Case, Number and Length>6" /> </span><p id="SingleLine6_error" class="zf-errorMessage" style="display:none;">Invalid value</p>
+																				</div><div class="zf-clearBoth"></div></li><!---------Single Line Ends Here---------->
+																				<!---------Single Line Starts Here---------->
+																				<li class="zf-tempFrmWrapper zf-medium"><label class="zf-labelName">Confirm New Password
+																						<em class="zf-important">*</em>
+																					</label>
+																					<div class="zf-tempContDiv"><span>
+																							<input type="password" name="confnewpass" checktype="c1" value="" maxlength="255"  invlovedinsalesiq=false size="45" /> </span><p id="SingleLine7_error" class="zf-errorMessage" style="display:none;">Invalid value</p>
+																					</div><div class="zf-clearBoth"></div></li><!---------Single Line Ends Here---------->
+							</ul></div><!---------template Container Starts Here---------->
+							<ul><li class="zf-fmFooter"><button class="zf-submitColor">Save Changes</button></li></ul></div><!-- 'zf-templateWrapper' ends --></form></div><!-- 'zf-templateWidth' ends -->
+						</form>
+<div class="container">
+ </div>
+
+  </div>
+</div>
+
+<!-- End page content -->
+</div>
+
+<!-- Footer -->
+<footer class="w3-center w3-light-grey w3-padding-48 w3-large">
+</footer>
+
+<script>
+// Tabbed Menu
+function openMenu(evt, menuName) {
+  var i, x, tablinks;
+  x = document.getElementsByClassName("menu");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablink");
+  for (i = 0; i < x.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" w3-dark-grey", "");
+  }
+  document.getElementById(menuName).style.display = "block";
+  evt.currentTarget.firstElementChild.className += " w3-dark-grey";
+}
+document.getElementById("myLink").click();
+</script>
+
+</body>
+</html>
+

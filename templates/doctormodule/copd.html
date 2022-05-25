@@ -1,0 +1,203 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<title>EMR</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata">
+<style>
+body, html {
+  height: 100%;
+  font-family: "Inconsolata", sans-serif;
+
+}
+
+.bgimg {
+  background-position: center;
+  background-size: cover;
+ background: url({% static 'doctormodule/11.jpg' %})  50% 50%;   background-size:cover;
+  min-height: 75%;
+}
+
+.menu {
+  display: none;
+}
+</style>
+<body>
+
+<!-- Links (sit on top) -->
+<div class="w3-top">
+  <div class="w3-row w3-padding w3-black">
+    <div class="w3-col s3">
+      <a href="home" class="w3-button w3-block w3-black">GO BACK</a>
+    </div>
+    <div class="w3-col s3">
+      <a href="copd" class="w3-button w3-block w3-black">COPD</a>
+    </div>
+    <div class="w3-col s3">
+      <a href="diabetes" class="w3-button w3-block w3-black">DIABETES</a>
+    </div>
+    <div class="w3-col s3">
+      <a href="heart" class="w3-button w3-block w3-black">HEART</a>
+    </div>
+  </div>
+</div>
+
+<!-- Header with image -->
+<header class="bgimg w3-display-container w3-grayscale-min" id="home">
+  <div class="w3-display-bottomleft w3-center w3-padding-large w3-hide-small">
+    <span class="w3-tag"></span>
+  </div>
+  <div class="w3-display-middle w3-center">
+    <span class="w3-text-white" style="font-size:45px">Machine learning methods for disease prediction with claims data <br>
+</span>
+  </div>
+  <div class="w3-display-bottomright w3-center w3-padding-large">
+    <span class="w3-text-white"></span>
+  </div>
+</header>
+
+<!-- Add a background color and large text to the whole page -->
+<div class="w3-sand w3-grayscale w3-large">
+
+<!-- About Container -->
+
+</div>
+
+<!-- Menu Container -->
+<div class="w3-container" id="menu">
+  <div class="w3-content" style="max-width:1000px">
+
+    <h5 class="w3-center w3-padding-48"><span class="w3-tag w3-wide">Module Contains</span></h5>
+
+    <div class="w3-row w3-center w3-card w3-padding">
+      <a href="javascript:void(0)" onclick="openMenu(event, 'Eat');" id="myLink">
+        <div class="w3-col s6 tablink">Prediction For</div>
+      </a>
+
+
+    <div id="Eat" class="w3-container menu w3-padding-48 w3-card">
+      <a href="copd" style="font-size:35px;">COPD</a>
+      <p class="w3-text-grey">Put Some content</p><br>
+
+
+
+</div>
+
+<!-- Contact/Area Container -->
+<div class="w3-container" id="where" style="padding-bottom:32px;">
+  <div class="w3-content" style="max-width:700px">
+    <h5 class="w3-center w3-padding-48"><span class="w3-tag w3-wide"></span></h5>
+    <p></p>
+
+    <p><span class="w3-tag">COPD</span>
+
+
+<form action="{% url 'copd' %}" method="post">
+    {% csrf_token %}
+      <div class="container">
+    <h1>Fill EMR Data of Patient</h1>
+    <h2>{{ message }}</h2>
+    <p>Please fill in this form </p>
+    <hr>
+
+    <label for="name"><b>Full Name</b></label>
+    <input type="text" placeholder="Enter Full Name" name="name" required>
+
+<br><br>
+    <label for="phone"><b>AID</b></label>
+    <input type="number" placeholder="Enter 14 digit AID Number" name="AID" required>
+<br><br>
+
+    <label for="email"><b>Email</b></label>
+    <input type="text" placeholder="Enter Email" name="email" required>
+
+<br><br>
+          <label for="phone"><b>Age</b></label>
+    <input type="number" placeholder="Enter Age " name="age" required>
+
+<br><br>
+
+    <label for="gender"><b>Gender</b></label>
+    <input type="radio" name="gender" value="1" checked> Male
+    <input type="radio" name="gender" value="0"> Female
+    <input type="radio" name="gender" value="2"> Other
+<br><br>
+
+
+<label for="Weight"><b>Weight</b></label>
+    <input type="number" placeholder="Enter Weight " name="Weight" required>
+
+      <br><br>
+
+<br><br>
+
+<label for="gender"><b>Lip Color</b></label>
+    <input type="radio" name="lip" value="0" checked> Normal
+    <input type="radio" name="lip" value="1"> Blue
+<br><br>
+
+          <label for="FEV"><b>FEV</b></label>
+    <input type="text" placeholder="Enter FEV " name="FEV" required>
+
+      <br><br>
+
+
+           <label for="FEV"><b>Smoking Intensity</b></label>
+    <input type="text" placeholder="Enter Smoking Intensity " name="si" required> Note: cigerates per day
+<br>
+
+      <br>
+ <label for="FEV"><b>Temp</b></label>
+    <input type="number" placeholder="Enter Body Temp " name="temp" required>
+
+
+<br><br>
+
+    <hr>
+
+    <button type="submit" class="registerbtn">Predict</button>
+
+
+
+<div class="container">
+  <p>Back? <a href="forgotpass">Click Here</a>.</p>
+
+  </div>
+</form>
+  </div>
+</div>
+
+<!-- End page content -->
+</div>
+
+<!-- Footer -->
+<footer class="w3-center w3-light-grey w3-padding-48 w3-large">
+
+</footer>
+
+<script>
+// Tabbed Menu
+function openMenu(evt, menuName) {
+  var i, x, tablinks;
+  x = document.getElementsByClassName("menu");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablink");
+  for (i = 0; i < x.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" w3-dark-grey", "");
+  }
+  document.getElementById(menuName).style.display = "block";
+  evt.currentTarget.firstElementChild.className += " w3-dark-grey";
+}
+document.getElementById("myLink").click();
+</script>
+
+</body>
+</html>
+
+
+
+
